@@ -74,7 +74,10 @@ def searcher():
             my_pass = passes[ws]["password"]
             my_email = passes[ws]["email"]
             messagebox.showinfo(title=ws, message=f"Email: {my_email}\n"
-                                                  f"Password: {my_pass}")
+                                                  f"Password: {my_pass}\n\n"
+                                                  f"Password has been copied to your"
+                                                  f" clipboard.")
+            pyperclip.copy(my_pass)
     except FileNotFoundError:
         messagebox.showerror(title="Error!", message="No data file found.")
 
